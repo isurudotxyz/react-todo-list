@@ -2,11 +2,12 @@ import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 
 function App() {
-  return;
-  <main>
-    <TodoInput></TodoInput>
-    <TodoList></TodoList>
-  </main>;
+  return (
+    <>
+      <TodoInput></TodoInput>
+      <TodoList></TodoList>
+    </>
+  );
 }
 
 export default App;
