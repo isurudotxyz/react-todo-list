@@ -1,8 +1,7 @@
 import React from "react";
 
 export default function TodoInput(props) {
-  const [values, setValue] = React.useState("");
-  const { handleAddTodos } = props;
+  const { handleAddTodos, values, setValue } = props;
   return (
     <header>
       <input

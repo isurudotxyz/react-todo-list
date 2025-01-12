@@ -4,6 +4,7 @@ import React from "react";
 
 function App() {
   const [todos, setTodos] = React.useState([]);
+  const [values, setValue] = React.useState("");
 
   function handleAddTodos(newTodo) {
     const newTodoList = [...todos, newTodo];
@@ -18,12 +19,24 @@ function App() {
     setTodos(newTodoList);
   }
 
-  function editDeleteTodos(index) {}
+  function handleEditTodos(index) {
+    const valueToBeEdited = todos[index];
+    setValue(valueToBeEdited);
+    handleDeleteTodos(index);
+  }
 
   return (
     <>
-      <TodoInput handleAddTodos={handleAddTodos}></TodoInput>
-      <TodoList todos={todos} handleDeleteTodos={handleDeleteTodos}></TodoList>
+      <TodoInput
+        values={values}
+        setValue={setValue}
+        handleAddTodos={handleAddTodos}
+      ></TodoInput>
+      <TodoList
+        todos={todos}
+        handleDeleteTodos={handleDeleteTodos}
+        handleEditTodos={handleEditTodos}
+      ></TodoList>
     </>
   );
 }
